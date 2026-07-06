@@ -6,7 +6,7 @@ export default defineConfig({
   main: {
     build: {
       outDir: "dist/main",
-      minify: "terser",
+      minify: "esbuild",
       sourcemap: false,
       rollupOptions: {
         external: ["better-sqlite3"],
@@ -16,7 +16,7 @@ export default defineConfig({
   preload: {
     build: {
       outDir: "dist/preload",
-      minify: "terser",
+      minify: "esbuild",
       sourcemap: false,
     },
   },
@@ -24,7 +24,7 @@ export default defineConfig({
     root: "src/renderer",
     build: {
       outDir: "dist/renderer",
-      minify: "terser",
+      minify: "esbuild",
       sourcemap: false,
     },
     resolve: {

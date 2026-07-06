@@ -10,7 +10,6 @@
     "pack:win": "electron-vite build && electron-builder --win"
   },
   "dependencies": {
-    "@qihang/ipc": "workspace:*",
     "better-sqlite3": "^11.0.0",
     "electron-store": "^10.0.0",
     "lucide-react": "^0.460.0",
