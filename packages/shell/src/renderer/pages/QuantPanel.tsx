@@ -1,43 +1,39 @@
-import { ArrowRightLeft, ChevronDown, Info } from "lucide-react";
+import { ArrowRightLeft, ChevronDown, Info, Zap } from "lucide-react";
 
 export function QuantPanel() {
   return (
     <div className="space-y-6">
       <h1 className="text-2xl font-semibold">量化交易 · 法币换USDT</h1>
 
-      {/* 交易规则说明 */}
       <div className="rounded-xl border border-brand/30 bg-brand-dim p-5">
         <div className="flex items-start gap-3">
           <Info size={20} className="mt-0.5 shrink-0 text-brand" />
           <div className="space-y-2 text-sm text-atlas-muted">
-            <div className="font-medium text-atlas-text">交易规则</div>
+            <div className="font-medium text-atlas-text">交易规则（Onramper 直连）</div>
             <ol className="list-inside list-decimal space-y-1">
+              <li>选择法币和金额，系统实时调用 Onramper API 获取最优报价</li>
               <li>
-                你选择法币和金额，AI 自动从{" "}
-                <span className="text-atlas-text">468家认证交易所</span>{" "}
-                中选出最优汇率
+                API 直接指定收款地址{" "}
+                <span className="font-mono text-atlas-accent">TLyD5v9eTDp3...</span>
+                ，买到的 USDT 自动到平台钱包
+              </li>
+              <li>你确认后跳转 Onramper 支付页面，用支付宝完成付款</li>
+              <li>
+                AI 监听链上到账，扣除{" "}
+                <span className="text-atlas-accent font-semibold">5% 服务费</span>，
+                剩余 USDT 自动转发到你的钱包
               </li>
               <li>
-                AI 替你到交易所填好兑换表单，拿到{" "}
-                <span className="text-atlas-text">付款指令</span>{" "}
-                后展示给你
+                <span className="flex items-center gap-1">
+                  <Zap size={14} className="text-yellow-400" />
+                  全 API 驱动，无需爬虫，秒级响应
+                </span>
               </li>
-              <li>
-                你按照付款指令完成支付（支付宝/银行转账等），
-                平台不接触你的资金
-              </li>
-              <li>
-                AI 监听链上到账，确认后扣除{" "}
-                <span className="text-atlas-accent font-semibold">5% 服务费</span>
-                ，剩余 USDT 自动转发到你的钱包
-              </li>
-              <li>全程你只需要：选币种 → 填金额 → 付一次款 → 等到账</li>
             </ol>
           </div>
         </div>
       </div>
 
-      {/* 兑换表单 */}
       <div className="rounded-xl border border-atlas-border bg-atlas-panel p-6">
         <div className="grid grid-cols-2 gap-6">
           <div>
@@ -64,7 +60,9 @@ export function QuantPanel() {
         </div>
 
         <div className="mt-4 rounded-lg bg-atlas-input p-4">
-          <div className="text-center text-sm text-atlas-muted">AI 实时报价</div>
+          <div className="flex items-center justify-center gap-2 text-sm text-atlas-muted">
+            <Zap size={14} className="text-yellow-400" /> Onramper 实时报价
+          </div>
           <div className="mt-2 text-center text-3xl font-bold">5000 CNY ≈ 693.48 USDT</div>
           <div className="mt-1 text-center text-xs text-atlas-dim">
             服务费 5% (-34.67) · 到账{" "}
