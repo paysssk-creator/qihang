@@ -1,0 +1,20 @@
+{
+  "name": "qihang",
+  "version": "0.1.0",
+  "private": true,
+  "description": "启航优选 — AI 原生多身份浏览器",
+  "scripts": {
+    "dev": "turbo dev",
+    "build": "turbo build",
+    "protect": "python scripts/protect.py",
+    "audit:report": "cd packages/agent && uv run audit.py report",
+    "audit:verify": "cd packages/agent && uv run audit.py verify",
+    "pack:mac": "pnpm build && pnpm protect && cd packages/shell && pnpm pack:mac",
+    "pack:win": "pnpm build && pnpm protect && cd packages/shell && pnpm pack:win",
+    "agent": "cd packages/agent && uv run monitor.py",
+    "host": "cd packages/host && uv run main.py"
+  },
+  "devDependencies": {
+    "turbo": "^2.0.0"
+  }
+}

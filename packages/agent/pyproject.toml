@@ -1,0 +1,12 @@
+[project]
+name = "qihang-agent"
+version = "0.1.0"
+description = "启航优选 — AI Agent (智能引擎)"
+requires-python = ">=3.12"
+dependencies = [
+    "openai>=1.0.0",
+    "anthropic>=0.40.0",
+    "httpx>=0.28.0",
+    "python-dotenv>=1.0.0",
+    "tronpy>=0.4.0",
+]
